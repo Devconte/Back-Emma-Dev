@@ -1,15 +1,18 @@
 const express = require('express');
+const multer = require('multer');
 
 const pictureController = require('./controllers/pictureController');
 const postController = require('./controllers/postController');
 const controllerHandler = require('./helpers/controllerHandler');
 const { errorsHandler } = require('./middlewares/errors');
 
+const upload = multer({ dest: '../../../upload/' });
+
 const router = express.Router();
 
 router.get('/test', controllerHandler(postController.test));
 
-router.get('/post/all', controllerHandler(postController.getAllPosts));
+
 
 /**
 * GET /picture/all
@@ -49,6 +52,7 @@ router.delete('/picture/deleteComment/:id', controllerHandler(pictureController.
 * @tags Post
 * @return {[Post]} 200 - success response - application/json
  */
+router.get('/post/all', controllerHandler(postController.getAllPosts));
 
 /**
 * GET /post/:id
@@ -64,7 +68,7 @@ router.get('/post/:id', controllerHandler(postController.getOnePost));
 * @tags Post
 * @return {[String]} 200 - success response - application/json
 */
-router.post('/post/create', controllerHandler(postController.createPost));
+router.post('/post/create', upload.single('picture_post'), controllerHandler(postController.createPost));
 /**
 * POST /post/addComment
 * @summary Add a comment to an existing post

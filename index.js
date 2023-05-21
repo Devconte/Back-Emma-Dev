@@ -2,7 +2,7 @@ require('dotenv').config();
 const cors = require('cors');
 
 const express = require('express');
-/* const expressJSDocSwagger = require('express-jsdoc-swagger');  */
+const expressJSDocSwagger = require('express-jsdoc-swagger'); 
 const router = require('./api/router');
 const { notFoundHandler } = require('./api/middlewares/errors');
 
