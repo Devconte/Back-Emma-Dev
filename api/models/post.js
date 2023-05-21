@@ -26,7 +26,7 @@ module.exports = {
    */
   async getAllPost() {
     const query = {
-      text: `SELECT post.*, comment_post.*, "user".username AS author_name, comment_user.username AS comment_username
+      text: `SELECT post.id AS id_test, post.*, comment_post.*, "user".username AS author_name, comment_user.username AS comment_username
       FROM post 
       LEFT JOIN comment_post ON post.id = comment_post.post_id 
       LEFT JOIN "user" ON post.author_id = "user".id 
