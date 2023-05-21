@@ -62,7 +62,7 @@ router.get('/post/:id', controllerHandler(postController.getOnePost));
 * POST /post/create
 * @summary Create a post
 * @tags Post
-* @return {[Post]} 200 - success response - application/json
+* @return {[String]} 200 - success response - application/json
 */
 router.post('/post/create', controllerHandler(postController.createPost));
 /**
@@ -85,7 +85,7 @@ router.patch('/post/update/:id', controllerHandler(postController.updatePost));
 * DELETE /post/deletePost/:id
 * @summary Delete a post
 * @tags Post
-* @return {[Post]} 200 - success response - application/json
+* @return {[String]} 200 - success response - application/json
 */
 router.delete('/post/deletePost/:id', controllerHandler(postController.deletePost));
 
@@ -93,7 +93,7 @@ router.delete('/post/deletePost/:id', controllerHandler(postController.deletePos
 * DELETE /post/deleteComment/:id
 * @summary Delete a comment from a post
 * @tags Comment_post
-* @return {[Comment_post]} 200 - success response - application/json
+* @return {[String]} 200 - success response - application/json
 */
 router.delete('/post/deleteComment/:id', controllerHandler(postController.deleteComment));
 
