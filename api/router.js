@@ -8,6 +8,7 @@ const { errorsHandler } = require('./middlewares/errors');
 const router = express.Router();
 
 router.get('/test', controllerHandler(postController.test));
+router.get('/post/all', controllerHandler(postController.getAllPosts));
 
 /**
 * GET /picture/all
@@ -47,7 +48,7 @@ router.delete('/picture/deleteComment/:id', controllerHandler(pictureController.
 * @tags Post
 * @return {[Post]} 200 - success response - application/json
  */
-router.get('/post/all', controllerHandler(postController.getAllPosts));
+
 
 /**
 * GET /post/:id
