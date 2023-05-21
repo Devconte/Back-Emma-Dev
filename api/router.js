@@ -1,18 +1,13 @@
 const express = require('express');
-const multer = require('multer');
 
 const pictureController = require('./controllers/pictureController');
 const postController = require('./controllers/postController');
 const controllerHandler = require('./helpers/controllerHandler');
 const { errorsHandler } = require('./middlewares/errors');
 
-const upload = multer({ dest: '../../../upload/' });
-
 const router = express.Router();
 
 router.get('/test', controllerHandler(postController.test));
-
-
 
 /**
 * GET /picture/all
