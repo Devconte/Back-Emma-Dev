@@ -28,9 +28,9 @@ module.exports = {
     const query = {
       text: `SELECT post.*, comment_post.*, "user".username AS author_name, comment_user.username AS comment_username
       FROM post 
-      JOIN comment_post ON post.id = comment_post.post_id 
-      JOIN "user" ON post.author_id = "user".id 
-      JOIN "user" AS comment_user ON comment_post.user_id = comment_user.id;`,
+      LEFT JOIN comment_post ON post.id = comment_post.post_id 
+      LEFT JOIN "user" ON post.author_id = "user".id 
+      LEFT JOIN "user" AS comment_user ON comment_post.user_id = comment_user.id;`,
     };
     const result = await client.query(query);
     return result.rows;
@@ -43,9 +43,9 @@ module.exports = {
     const query = {
       text: `SELECT post.*, comment_post.*, "user".username AS author_name, comment_user.username AS comment_username
       FROM post 
-      JOIN comment_post ON post.id = comment_post.post_id 
-      JOIN "user" ON post.author_id = "user".id 
-      JOIN "user" AS comment_user ON comment_post.user_id = comment_user.id WHERE post.id = $1 `,
+      LEFT JOIN comment_post ON post.id = comment_post.post_id 
+      LEFT JOIN "user" ON post.author_id = "user".id 
+      LEFT JOIN "user" AS comment_user ON comment_post.user_id = comment_user.id WHERE post.id = $1 `,
       values: [id],
     };
     const result = await client.query(query);
