@@ -68,7 +68,7 @@ router.get('/post/:id', controllerHandler(postController.getOnePost));
 * @tags Post
 * @return {[String]} 200 - success response - application/json
 */
-router.post('/post/create', upload.single('picture_post'), controllerHandler(postController.createPost));
+router.post('/post/create', controllerHandler(postController.createPost));
 /**
 * POST /post/addComment
 * @summary Add a comment to an existing post
