@@ -49,7 +49,6 @@ router.delete('/picture/deleteComment/:id', controllerHandler(pictureController.
 * @return {[Post]} 200 - success response - application/json
  */
 
-
 /**
 * GET /post/:id
 * @summary Get one post
