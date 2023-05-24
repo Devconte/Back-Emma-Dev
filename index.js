@@ -21,7 +21,7 @@ const options = {
       scheme: 'basic',
     },
   },
-  swaggerUIPath: '/api-docs',
+  swaggerUIPath: '/app/api-docs',
   baseDir: __dirname,
   // Glob pattern to find your jsdoc files (multiple patterns can be added in an array)
   filesPattern: 'api/**/*.js',
