@@ -43,14 +43,16 @@ const options = {
   // multiple option in case you want more that one instance
   multiple: true,
 };
-expressJSDocSwagger(app)(options);
+
 app.use(cors('*'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/app', router);
 
+expressJSDocSwagger(app)(options);
 app.use(notFoundHandler);
+
 
 app.listen(port, () => {
   console.log(`Server ready: http://localhost:${port}`);
