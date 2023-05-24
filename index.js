@@ -53,7 +53,6 @@ app.use('/app', router);
 expressJSDocSwagger(app)(options);
 app.use(notFoundHandler);
 
-
 app.listen(port, () => {
   console.log(`Server ready: http://localhost:${port}`);
 });
