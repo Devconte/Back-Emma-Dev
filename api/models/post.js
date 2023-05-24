@@ -21,8 +21,9 @@ const client = require('../database/client');
 
 module.exports = {
   /**
-   * Get all post with comments
-   * @returns - All post with their authors, the comments related to the post and their authors
+   * retrieve all post with comments
+   * @returns All post with their authors, the comments
+   *  related to the post and their authors
    */
   async getAllPost() {
     const query = {
@@ -36,7 +37,7 @@ module.exports = {
     return result.rows;
   },
   /**
-   * Get one post with comments
+   * retrieve one post with comments
    * @returns - One post with the author, the comments related to the post and their authors
    */
   async getOnePost(id) {
