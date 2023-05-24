@@ -8,6 +8,14 @@ const { errorsHandler } = require('./middlewares/errors');
 const router = express.Router();
 
 router.get('/test', controllerHandler(postController.test));
+
+/**
+* GET /post/all
+* @summary Get all posts
+* @tags Post
+* @return {[Post]} 200 - success response - application/json
+ */
+
 router.get('/post/all', controllerHandler(postController.getAllPosts));
 
 /**
@@ -42,12 +50,6 @@ router.delete('/picture/:id', controllerHandler(pictureController.deletePicture)
 */
 router.delete('/picture/deleteComment/:id', controllerHandler(pictureController.deleteComment));
 
-/**
-* GET /post/all
-* @summary Get all posts
-* @tags Post
-* @return {[Post]} 200 - success response - application/json
- */
 
 /**
 * GET /post/:id
